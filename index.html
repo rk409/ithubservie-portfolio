@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Hub Service Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="ihs.svg">
+</head>
+<body class="bg-gradient-to-br from-gray-900 via-indigo-900 to-purple-900 text-white overflow-x-hidden">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl flex items-center gap-2 font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                    <img src="ihs.svg" alt="IT Hub Service" class="w-10 h-10">
+                    IT Hub Service
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link hover:text-blue-400 transition-colors">Home</a>
+                    <a href="#about" class="nav-link hover:text-blue-400 transition-colors">About</a>
+                    <a href="#services" class="nav-link hover:text-blue-400 transition-colors">Services</a>
+                    <a href="#logo-design" class="nav-link hover:text-blue-400 transition-colors">Logo Design</a>
+                    <a href="#projects" class="nav-link hover:text-blue-400 transition-colors">Projects</a>
+                    <a href="#technology" class="nav-link hover:text-blue-400 transition-colors">Technology</a>
+                    <a href="#contact" class="nav-link hover:text-blue-400 transition-colors">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-white">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-gray-900/95 backdrop-blur-sm transform translate-x-full transition-transform duration-300">
+            <div class="container mx-auto px-6 py-4">
+                <div class="flex flex-col space-y-4">
+                    <a href="#home" class="mobile-nav-link">Home</a>
+                    <a href="#about" class="mobile-nav-link">About</a>
+                    <a href="#services" class="mobile-nav-link">Services</a>
+                    <a href="#logo-design" class="mobile-nav-link">Logo Design</a>
+                    <a href="#projects" class="mobile-nav-link">Projects</a>
+                    <a href="#technology" class="mobile-nav-link">Technology</a>
+                    <a href="#contact" class="mobile-nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative">
+        <div class="container mx-auto px-6 text-center">
+            <div class="hero-content">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 hero-title">
+                    <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        IT Hub Service
+                    </span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-300 hero-subtitle">
+                    Your Vision, Our Code – Let's Build Brilliance
+                </p>
+                <p class="text-lg md:text-xl mb-12 text-gray-400 max-w-3xl mx-auto hero-description">
+                    We specialize in cutting-edge technology solutions, digital transformation, and innovative software development that drives business growth and success.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center hero-buttons">
+                    <button class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                        Get Started
+                    </button>
+                    <button onclick="window.location.href='https://www.ithubservice.in'" class="border-2 border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Animated Background Elements -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 about-title">
+                    About <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Us</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto about-subtitle">
+                    We are a team of passionate technologists dedicated to transforming businesses through innovative solutions.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="about-content">
+                    <div class="space-y-6">
+                        <div class="about-item">
+                            <h3 class="text-2xl font-semibold mb-4 text-blue-400">Our Mission</h3>
+                            <p class="text-gray-300 leading-relaxed">
+                                IT Hub Service is to deliver smart, reliable, and creative IT solutions that help businesses grow in the digital world. We focus on quality, innovation, and building lasting partnerships with our clients.
+                            </p>
+                        </div>
+                        <div class="about-item">
+                            <h3 class="text-2xl font-semibold mb-4 text-purple-400">Our Vision</h3>
+                            <p class="text-gray-300 leading-relaxed">
+                                To become a leading provider of innovative IT solutions, empowering businesses worldwide to thrive in the digital age through technology, creativity, and excellence.
+                            </p>
+                        </div>
+                        <div class="about-item">
+                            <h3 class="text-2xl font-semibold mb-4 text-indigo-400">Our Values</h3>
+                            <p class="text-gray-300 leading-relaxed">
+                                Innovation, Quality, Integrity, Customer Focus, Collaboration
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="relative">
+                        <div class="w-full h-96 bg-gradient-to-br from-blue-500/20 to-purple-600/20 rounded-2xl border border-blue-400/30 backdrop-blur-sm flex items-center justify-center">
+                            <i class="fas fa-code text-6xl text-blue-400"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 services-title">
+                    Our <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Services</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto capitalize services-subtitle">
+                    we offer a wide range of digital and IT solutions tailored to meet your business needs
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card">
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 hover:border-blue-400 transition-all duration-300 transform hover:scale-105">
+                        <div class="text-blue-400 text-4xl mb-6">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Custom Development</h3>
+                        <p class="text-gray-400">
+                            Tailored software solutions built from the ground up to meet your specific business requirements and objectives.
+                        </p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 hover:border-purple-400 transition-all duration-300 transform hover:scale-105">
+                        <div class="text-purple-400 text-4xl mb-6">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Web Apps</h3>
+                        <p class="text-gray-400">
+                            Custom websites, e-commerce platforms, and web applications
+                        </p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 hover:border-indigo-400 transition-all duration-300 transform hover:scale-105">
+                        <div class="text-indigo-400 text-4xl mb-6">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Graphic Designer</h3>
+                        <p class="text-gray-400">
+                            Logos, branding, marketing materials, and UI/UX design
+                        </p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 hover:border-green-400 transition-all duration-300 transform hover:scale-105">
+                        <div class="text-green-400 text-4xl mb-6">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Social Media Management</h3>
+                        <p class="text-gray-400">
+                            Content creation, scheduling, and audience engagement
+                        </p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 hover:border-yellow-400 transition-all duration-300 transform hover:scale-105">
+                        <div class="text-yellow-400 text-4xl mb-6">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Chatbot Creation</h3>
+                        <p class="text-gray-400">
+                            Smart AI-powered chatbots for customer support and automation
+                        </p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-8 hover:border-red-400 transition-all duration-300 transform hover:scale-105">
+                        <div class="text-red-400 text-4xl mb-6">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4">Admin Panel</h3>
+                        <p class="text-gray-400">
+                            Custom dashboards for efficient business management
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Design Section -->
+    <section id="logo-design" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 logo-design-title">
+                    Logo <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Design</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto logo-design-subtitle">
+                    Creative and professional logo designs that represent your brand identity perfectly.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="logo-card">
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl overflow-hidden hover:border-blue-400 transition-all duration-300 transform hover:scale-105">
+                        <div class="h-64 bg-gradient-to-br from-blue-500/20 to-purple-600/20 flex items-center justify-center p-6">
+                            <div class="text-center">
+                                <div class="w-24 h-24 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+                                    <span class="text-white font-bold text-2xl">IT</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-4">Brand Identity</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">Logo Design</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">Brand Guidelines</span>
+                                <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">Color Palette</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="logo-card">
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl overflow-hidden hover:border-purple-400 transition-all duration-300 transform hover:scale-105">
+                        <div class="h-64 bg-gradient-to-br from-purple-500/20 to-pink-600/20 flex items-center justify-center p-6">
+                            <div class="text-center">
+                                <div class="w-24 h-24 bg-gradient-to-br from-purple-400 to-pink-500 rounded-lg flex items-center justify-center mb-4 mx-auto transform rotate-45">
+                                    <span class="text-white font-bold text-xl transform -rotate-45">C</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-4">Vector Graphics</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">SVG Format</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">High Resolution</span>
+                                <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">Print Ready</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="logo-card">
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl overflow-hidden hover:border-indigo-400 transition-all duration-300 transform hover:scale-105">
+                        <div class="h-64 bg-gradient-to-br from-indigo-500/20 to-blue-600/20 flex items-center justify-center p-6">
+                            <div class="text-center">
+                                <div class="w-24 h-24 bg-gradient-to-br from-indigo-400 to-blue-500 rounded-2xl flex items-center justify-center mb-4 mx-auto relative">
+                                    <div class="absolute inset-2 bg-white rounded-xl"></div>
+                                    <span class="text-indigo-600 font-bold text-2xl relative z-10">A</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-4">Creative Concepts</h3>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">Custom Design</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">Multiple Concepts</span>
+                                <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">Revisions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 projects-title">
+                    Our <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Projects</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto projects-subtitle">
+                    Showcasing our latest work and successful implementations.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="project-card">
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl overflow-hidden hover:border-blue-400 transition-all duration-300 transform hover:scale-105">
+                        <div class="h-48 bg-gradient-to-br from-blue-500/20 to-purple-600/20 flex items-center justify-center">
+                            <i class="fas fa-shopping-cart text-4xl text-blue-400"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">E-Commerce Platform</h3>
+                            <p class="text-gray-400 mb-4">A modern e-commerce solution with advanced features and seamless user experience.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">React</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">Node.js</span>
+                                <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl overflow-hidden hover:border-purple-400 transition-all duration-300 transform hover:scale-105">
+                        <div class="h-48 bg-gradient-to-br from-purple-500/20 to-pink-600/20 flex items-center justify-center">
+                            <i class="fas fa-mobile-alt text-4xl text-purple-400"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Food Restaurant</h3>
+                            <p class="text-gray-400 mb-4">Food Restaurant website with online ordering and delivery system.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">React Native</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">Firebase</span>
+                                <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl overflow-hidden hover:border-red-400 transition-all duration-300 transform hover:scale-105">
+                        <div class="h-48 bg-gradient-to-br from-red-500/20 to-pink-600/20 flex items-center justify-center">
+                            <i class="fas fa-robot text-4xl text-red-400"></i>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">AI Chatbot</h3>
+                            <p class="text-gray-400 mb-4">Intelligent customer service chatbot with natural language processing.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm">Python</span>
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm">TensorFlow</span>
+                                <span class="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm">NLP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="technology" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 technology-title">
+                    <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Technologies</span> We Use
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto technology-subtitle">
+                    Cutting-edge tools and frameworks that power our innovative solutions.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                <div class="tech-item">
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 text-center hover:border-blue-400 transition-all duration-300 transform hover:scale-110">
+                        <i class="fab fa-react text-4xl text-blue-400 mb-4"></i>
+                        <h3 class="font-semibold">React</h3>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 text-center hover:border-green-400 transition-all duration-300 transform hover:scale-110">
+                        <i class="fab fa-node-js text-4xl text-green-400 mb-4"></i>
+                        <h3 class="font-semibold">Node.js</h3>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 text-center hover:border-yellow-400 transition-all duration-300 transform hover:scale-110">
+                        <i class="fab fa-js text-4xl text-yellow-400 mb-4"></i>
+                        <h3 class="font-semibold">JavaScript</h3>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 text-center hover:border-blue-500 transition-all duration-300 transform hover:scale-110">
+                        <i class="fab fa-python text-4xl text-blue-500 mb-4"></i>
+                        <h3 class="font-semibold">Python</h3>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 text-center hover:border-purple-400 transition-all duration-300 transform hover:scale-110">
+                        <i class="fab fa-vuejs text-4xl text-purple-400 mb-4"></i>
+                        <h3 class="font-semibold">Vue.js</h3>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 text-center hover:border-red-400 transition-all duration-300 transform hover:scale-110">
+                        <i class="fab fa-angular text-4xl text-red-400 mb-4"></i>
+                        <h3 class="font-semibold">Angular</h3>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 text-center hover:border-indigo-400 transition-all duration-300 transform hover:scale-110">
+                        <i class="fab fa-aws text-4xl text-indigo-400 mb-4"></i>
+                        <h3 class="font-semibold">AWS</h3>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 text-center hover:border-blue-600 transition-all duration-300 transform hover:scale-110">
+                        <i class="fab fa-docker text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="font-semibold">Docker</h3>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 text-center hover:border-green-500 transition-all duration-300 transform hover:scale-110">
+                        <i class="fab fa-github text-4xl text-green-500 mb-4"></i>
+                        <h3 class="font-semibold">GitHub</h3>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 text-center hover:border-orange-400 transition-all duration-300 transform hover:scale-110">
+                        <img src="firebase.png" class="fab fa-firebase w-10 text-orange-400 mb-4"></img>
+                        <h3 class="font-semibold">Firebase</h3>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 text-center hover:border-blue-700 transition-all duration-300 transform hover:scale-110">
+                        <img src="mongodb.png" class="fab fa-mongodb w-10 text-orange-400 mb-4"></img>
+                        <h3 class="font-semibold">MongoDB</h3>
+                    </div>
+                </div>
+                <div class="tech-item">
+                    <div class="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 text-center hover:border-purple-600 transition-all duration-300 transform hover:scale-110">
+                        <img src="kubernets.png" class="fab fa-kubernetes w-10 text-orange-400 mb-4"></img>
+                        <h3 class="font-semibold">Kubernetes</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 contact-title">
+                    Get In <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Touch</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto contact-subtitle">
+                    Ready to start your next project? Let's discuss how we can help bring your vision to life.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="contact-info">
+                    <div class="space-y-4">
+                        <!-- Contact Image -->
+                        <div class="contact-image">
+                            <div class="relative">
+                                <img src="image.png" alt="IT Hub Team" class="w-full h-[50vh] object-cover rounded-xl border border-gray-700 shadow-lg">
+                                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent rounded-xl"></div>
+                                <div class="absolute bottom-4 left-4">
+                                    <h3 class="text-white font-semibold text-lg">IT Hub Team</h3>
+                                    <p class="text-gray-300 text-sm">Ready to serve you</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    
+                        <!-- Social Media Links -->
+                        <div class="social-links mt-8">
+                            <h3 class="font-semibold text-lg mb-4">Follow Us</h3>
+                            <div class="flex space-x-4">
+                                <a href="https://instagram.com/ithubservice.in" target="_blank" class="w-12 h-12 bg-gray-800/50 border border-gray-700 rounded-lg flex items-center justify-center hover:border-blue-400 transition-colors group">
+                                    <i class="fab fa-instagram text-blue-400 group-hover:scale-110 transition-transform"></i>
+                                </a>
+                                <a href="https://x.com/ithubserviceind" target="_blank" class="w-12 h-12 bg-gray-800/50 border border-gray-700 rounded-lg flex items-center justify-center hover:border-blue-400 transition-colors group">
+                                    <i class="fab fa-twitter text-blue-400 group-hover:scale-110 transition-transform"></i>
+                                </a>
+                                <a href="https://linkedin.com/in/company/ithubservice" target="_blank" class="w-12 h-12 bg-gray-800/50 border border-gray-700 rounded-lg flex items-center justify-center hover:border-blue-400 transition-colors group">
+                                    <i class="fab fa-linkedin-in text-blue-400 group-hover:scale-110 transition-transform"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm" class="space-y-6" action="https://api.web3forms.com/submit" method="POST">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <input type="hidden" name="access_key" value="860c01ec-2427-4e94-8fdf-0e0a0084f0d1">
+                            <div>
+                                <label for="name" class="block text-sm font-medium mb-2">Name</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:border-blue-400 focus:outline-none transition-colors">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:border-blue-400 focus:outline-none transition-colors">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:border-blue-400 focus:outline-none transition-colors">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-gray-800/50 border border-gray-700 rounded-lg focus:border-blue-400 focus:outline-none transition-colors resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900/50 backdrop-blur-sm border-t border-gray-800 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="text-3xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4">
+                        IT Hub Service
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        Empowering businesses with innovative technology solutions that drive growth and success in the digital age.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.instagram.com/ithubservice.in/" target="_blank" class="w-14 h-14 bg-gray-800/50 border border-gray-700 rounded-lg flex items-center justify-center hover:border-blue-400 transition-colors">
+                            <i class="fab fa-instagram text-blue-400"></i>
+                        </a>
+                        <a href="https://x.com/ithubserviceind" target="_blank" class="w-14 h-14 bg-gray-800/50 border border-gray-700 rounded-lg flex items-center justify-center hover:border-blue-400 transition-colors">
+                            <i class="fab fa-twitter text-blue-400"></i>
+                        </a>
+                        <a href="https:linkedin.com/in/company/ithubservice" class="w-14 h-14 bg-gray-800/50 border border-gray-700 rounded-lg flex items-center justify-center hover:border-blue-400 transition-colors">
+                            <i class="fab fa-linkedin-in text-blue-400"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-blue-400 transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-blue-400 transition-colors">About</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-blue-400 transition-colors">Services</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-blue-400 transition-colors">Projects</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-blue-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-blue-400"></i>
+                            <a href="mailto:support@ithubservice.in" class="text-gray-400 hover:text-blue-400 transition-colors">support@ithubservice.in</a>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-blue-400"></i>
+                            <a href="tel:+919911468082" class="text-gray-400 hover:text-blue-400 transition-colors">+91 9911468082</a>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fab fa-whatsapp text-green-400"></i>
+                            <a href="https://wa.me/919911468082?text=Hi%20IT%20Hub%20Service,%20I%20would%20like%20to%20discuss%20a%20project%20with%20you." target="_blank" class="text-gray-400 hover:text-green-400 transition-colors">Send WhatsApp Message</a>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fas fa-clock text-blue-400"></i>
+                            <span class="text-gray-400">All Days: 9:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2025 IT Hub. All rights reserved. | Designed with ❤️ for innovation
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

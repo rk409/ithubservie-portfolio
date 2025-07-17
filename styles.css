@@ -1,0 +1,771 @@
+/* Custom CSS for IT Hub Portfolio */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #2563eb, #7c3aed);
+}
+
+/* Floating background shapes */
+.floating-shape {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+    animation: float 6s ease-in-out infinite;
+}
+
+.shape-1 {
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    width: 150px;
+    height: 150px;
+    top: 60%;
+    right: 10%;
+    animation-delay: 2s;
+}
+
+.shape-3 {
+    width: 100px;
+    height: 100px;
+    bottom: 20%;
+    left: 20%;
+    animation-delay: 4s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(180deg);
+    }
+}
+
+/* Navigation animations */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Mobile menu animations */
+.mobile-nav-link {
+    display: block;
+    padding: 1rem 0;
+    color: #9ca3af;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(75, 85, 99, 0.3);
+}
+
+.mobile-nav-link:hover {
+    color: #3b82f6;
+    padding-left: 1rem;
+}
+
+/* Hero section animations */
+.hero-content {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.hero-title {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.hero-subtitle {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.hero-description {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.hero-buttons {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+/* FIXED: Service cards - Hidden initially, only show on scroll trigger */
+.service-card {
+    transition: all 0.3s ease;
+    opacity: 0; /* Hidden initially */
+    transform: translateY(0) rotateX(0) rotateY(0);
+    will-change: transform, opacity;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    visibility: hidden; /* Ensure hidden until triggered */
+}
+
+.service-card:hover {
+    transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+}
+
+/* FIXED: Project cards - Hidden initially, only show on scroll trigger */
+.project-card {
+    transition: all 0.3s ease;
+    opacity: 0; /* Hidden initially */
+    transform: translateY(0) rotateX(0) rotateY(0);
+    will-change: transform, opacity;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    visibility: hidden; /* Ensure hidden until triggered */
+}
+
+.project-card:hover {
+    transform: translateY(-15px) rotateX(10deg) rotateY(10deg);
+    box-shadow: 0 25px 50px rgba(139, 92, 246, 0.3);
+}
+
+/* FIXED: Technology items - Hidden initially, only show on scroll trigger */
+.tech-item {
+    transition: all 0.3s ease;
+    opacity: 0; /* Hidden initially */
+    transform: translateY(0) scale(1) rotate(0deg);
+    will-change: transform, opacity;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    position: relative;
+    overflow: hidden;
+    visibility: hidden; /* Ensure hidden until triggered */
+}
+
+.tech-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.tech-item:hover::before {
+    left: 100%;
+}
+
+.tech-item:hover {
+    transform: translateY(-10px) scale(1.1) rotate(5deg);
+    box-shadow: 0 15px 30px rgba(59, 130, 246, 0.4);
+}
+
+/* Contact form animations */
+.contact-item {
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+/* Form input focus effects */
+input:focus, textarea:focus {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Button hover effects */
+button {
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+/* Loading animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ENHANCED: New animation keyframes */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(100px);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05) translateY(-10px);
+    }
+    70% {
+        transform: scale(0.9) translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes flipIn {
+    0% {
+        opacity: 0;
+        transform: rotateY(90deg) translateY(80px);
+    }
+    100% {
+        opacity: 1;
+        transform: rotateY(0deg) translateY(0);
+    }
+}
+
+@keyframes elasticIn {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(360deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2) rotate(180deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(59, 130, 246, 0.6);
+    }
+}
+
+/* ENHANCED: Animation classes for better control */
+.animate-fade-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-left {
+    animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-fade-right {
+    animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+}
+
+.animate-bounce-in {
+    animation: bounceIn 1s ease-out forwards;
+}
+
+.animate-flip-in {
+    animation: flipIn 1.2s ease-out forwards;
+}
+
+.animate-elastic-in {
+    animation: elasticIn 0.8s ease-out forwards;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* FIXED: Visibility states for cards - Only visible when triggered */
+.card-visible {
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) rotate(0deg) !important;
+    visibility: visible !important;
+}
+
+.card-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    visibility: hidden;
+}
+
+/* ENHANCED: Better animation performance */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ENHANCED: 3D perspective containers */
+.perspective-container {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+/* ENHANCED: Technology section special effects */
+#technology {
+    position: relative;
+    overflow: hidden;
+}
+
+#technology::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ENHANCED: Card content animations */
+.service-card .text-blue-400,
+.project-card .text-blue-400,
+.tech-item .text-blue-400 {
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .text-blue-400,
+.project-card:hover .text-blue-400,
+.tech-item:hover .text-blue-400 {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px currentColor);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .floating-shape {
+        display: none;
+    }
+    
+    /* FIXED: Better mobile card visibility - still hidden initially */
+    .service-card,
+    .project-card,
+    .tech-item {
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    /* Disable complex 3D effects on mobile for performance */
+    .service-card:hover,
+    .project-card:hover,
+    .tech-item:hover {
+        transform: translateY(-5px) scale(1.02);
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* Custom animations for GSAP */
+.gsap-fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.gsap-fade-left {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.gsap-fade-right {
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.gsap-scale {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.gsap-rotate {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.8);
+}
+
+/* Parallax effect */
+.parallax {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Smooth transitions for all elements */
+* {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Custom focus styles */
+.focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* Loading states */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Success/Error states for form */
+.success {
+    border-color: #10b981 !important;
+}
+
+.error {
+    border-color: #ef4444 !important;
+}
+
+/* Custom tooltip */
+.tooltip {
+    position: relative;
+}
+
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1f2937;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Gradient text animation */
+.gradient-text {
+    background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899, #f59e0b);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Pulse animation for call-to-action elements */
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* Stagger animation for lists */
+.stagger-item {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Custom cursor for interactive elements */
+.interactive {
+    cursor: pointer;
+}
+
+.interactive:hover {
+    transform: scale(1.05);
+}
+
+/* Glass morphism effect */
+.glass {
+    background: rgba(31, 41, 55, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Neon glow effect */
+.neon-glow {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.neon-glow:hover {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+}
+
+/* Typewriter effect */
+.typewriter {
+    overflow: hidden;
+    border-right: 2px solid #3b82f6;
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #3b82f6;
+    }
+}
+
+/* Smooth page transitions */
+.page-transition {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.page-transition.loaded {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Custom selection color */
+::selection {
+    background: rgba(59, 130, 246, 0.3);
+    color: white;
+}
+
+/* Focus ring for accessibility */
+.focus-ring:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* FIXED: Force visibility for critical elements - Only when triggered */
+.service-card,
+.project-card,
+.tech-item {
+    /* Cards are hidden by default, only visible when triggered */
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* ENHANCED: Better animation performance */
+@media (prefers-reduced-motion: no-preference) {
+    .service-card,
+    .project-card,
+    .tech-item {
+        transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+    }
+}
+
+/* ENHANCED: Fallback for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    /* Ensure cards are visible even with reduced motion */
+    .service-card,
+    .project-card,
+    .tech-item {
+        opacity: 1 !important;
+        transform: none !important;
+        visibility: visible !important;
+    }
+}
+
+/* ENHANCED: Debug styles (remove in production) */
+.debug-animation {
+    border: 2px solid red;
+}
+
+.debug-animation.animated {
+    border-color: green;
+}
+
+/* ENHANCED: Special effects for technology items */
+.tech-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-item::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+    animation: rotate 4s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-item:hover::after {
+    opacity: 1;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+} 
